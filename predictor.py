@@ -23,13 +23,10 @@ class Predictor:
         
         self.X_train_scaled = self.scaler.fit_transform(self.X_train)
         self.X_test_scaled = self.scaler.transform(self.X_test)
-        
-        print("Données préparées")
 
 
     def train(self):
         self.model.fit(self.X_train_scaled, self.y_train)
-        print("Modèle", self.model.__class__.__name__, "entraîné")
 
 
     def evaluate(self):
